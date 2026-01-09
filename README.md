@@ -16,8 +16,9 @@ ui 用于存放图形界面ui文件及pyside6-uic编译生成的_ui.py文件。�
 
 1. 克隆项目到本地 
 2. 配置开发环境安装必要的软件包
-3. 加入自己的代码、文档、保证代码能独立运行
-4. 更新Physical_Simulation.py文件中力、热、光、电相应位置，让主程序能在相应模块中索引自己的代码
+3. 使用python运行Physical_Simulation.py(也可以运行单独的例子)
+4. 加入自己的代码、文档、保证代码能独立运行
+5. 更新Physical_Simulation.py文件中力、热、光、电相应位置，让主程序能在相应模块中索引自己的代码
 
 ## TODO List
 
