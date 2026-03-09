@@ -32,6 +32,8 @@ from ui.SchBlack_Hole_ui import schblack_hole_frame
 from Michelson_Equal_Path_Interference import michelson_equal_path_interference_frame
 from Michelson_Equal_Thickness_Interference import michelson_equal_thickness_interference_frame
 from Heat_Conduction_in_a_2D_Plate import heat_conduction_in_a_2D_plate_frame
+from hybrid_orbital_module import hybrid_orbital_frame  
+from hydrogen_orbital_module import hydrogen_orbital_frame
 
 def clean_ansi_codes(text):
     ansi_escape = re.compile(r'\x1B(?:[@-Z\\-_]|\[[0-?]*[ -/]*[@-~])')
@@ -219,7 +221,7 @@ class SimulationApp(QtWidgets.QMainWindow, Ui_Simulation):
             "热学": ["二维板材导热展示（差分法）", "2", "3"],
             "光学": ["迈克尔逊干涉仪等倾干涉", "迈克尔逊干涉仪等厚干涉", "3"],
             "电动力学": ["选项 1", "选项 2", "选项 3"],
-            "量子力学": ["一维无限深势阱波函数态叠加", "选项 2", "选项 3"],
+            "量子力学": ["一维无限深势阱波函数态叠加", "原子轨道", "杂化轨道","选项 4"],
             "统计力学": ["史瓦西黑洞下的引力透镜效应", "选项 2", "选项 3"]
         }
 
@@ -337,6 +339,8 @@ class SimulationApp(QtWidgets.QMainWindow, Ui_Simulation):
             "迈克尔逊干涉仪等倾干涉": self.add_michelson_equal_path_interference_tab,
             "迈克尔逊干涉仪等厚干涉": self.add_michelson_equal_thickness_interference_tab,
             "二维板材导热展示（差分法）": self.add_heat_conduction_in_a_2D_plate_tab,
+            "原子轨道": self.add_hydrogen_orbital_tab, 
+            "杂化轨道": self.add_hybrid_orbital_tab,
         }
 
         if selected_option in tab_mapping:
@@ -385,7 +389,12 @@ class SimulationApp(QtWidgets.QMainWindow, Ui_Simulation):
 
     def add_heat_conduction_in_a_2D_plate_tab(self):
         self.add_simulation_window(heat_conduction_in_a_2D_plate_frame, "二维板材导热展示（差分法）")
-
+    
+    def add_hydrogen_orbital_tab(self):
+        self.add_simulation_window(hydrogen_orbital_frame, "原子轨道")
+    
+    def add_hybrid_orbital_tab(self):
+        self.add_simulation_window(hybrid_orbital_frame, "杂化轨道")
 
     def open_ai_chat(self):
         # 打开 AI 聊天窗口并启动后台进程
