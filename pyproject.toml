@@ -9,5 +9,6 @@ dependencies = [
     "pyopengl>=3.1.10",
     "pyqtgraph>=0.14.0",
     "pyside6>=6.10.1",
+    "scikit-image>=0.26.0",
     "scipy>=1.16.3",
 ]
